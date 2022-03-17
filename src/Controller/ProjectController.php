@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\Controller;
+namespace Api\Controller; // TODO: Некорректный namespace. Нужен App\Controller
 
 use App\Model;
 use App\Storage\DataStorage;
@@ -62,7 +62,8 @@ class ProjectController
      */
     public function projectCreateTaskAction(Request $request)
     {
-		$project = $this->storage->getProjectById($request->get('id'));
+        // TODO: Ниже в коде использована табуляция, хотя по остальному проекту - 4 пробела. Следует привести к общему виду
+		$project = $this->storage->getProjectById($request->get('id')); // TODO: Не учтено то, что вызываемый метод может выбросить исключение
 		if (!$project) {
 			return new JsonResponse(['error' => 'Not found']);
 		}

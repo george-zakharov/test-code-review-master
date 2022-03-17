@@ -7,9 +7,9 @@ class Project
     /**
      * @var array
      */
-    public $_data;
+    public $_data; // TODO: Здесь стоит выставить private
     
-    public function __construct($data)
+    public function __construct($data) // TODO: Возможно стоит указать тип параметра
     {
         $this->_data = $data;
     }
