@@ -9,7 +9,7 @@ class DataStorage
     /**
      * @var \PDO 
      */
-    public $pdo; // TODO: Стоит указать private модификатор доступа, чтобы инкапсулировать это свойство
+    public $pdo; // TODO: Make this property private as we need encapsulation
 
     public function __construct()
     {
@@ -20,7 +20,7 @@ class DataStorage
      * @param int $projectId
      * @throws Model\NotFoundException
      */
-    public function getProjectById($projectId) // TODO: Следует указать тип параметра int
+    public function getProjectById($projectId) // TODO: Missed type declaration of `$projectId`
     {
         $stmt = $this->pdo->query('SELECT * FROM project WHERE id = ' . (int) $projectId);
 
@@ -36,7 +36,7 @@ class DataStorage
      * @param int $limit
      * @param int $offset
      */
-    public function getTasksByProjectId(int $project_id, $limit, $offset) // TODO: Следует указать тип int у двух параметров
+    public function getTasksByProjectId(int $project_id, $limit, $offset) // TODO: Missed type declaration of `$limit` and `$offset`
     {
         $stmt = $this->pdo->query("SELECT * FROM task WHERE project_id = $project_id LIMIT ?, ?");
         $stmt->execute([$limit, $offset]);
@@ -54,12 +54,12 @@ class DataStorage
      * @param int $projectId
      * @return Model\Task
      */
-    public function createTask(array $data, $projectId) // TODO: Следует указать тип int у параметра $projectId
+    public function createTask(array $data, $projectId) // TODO: Missed type declaration of `$projectId`
     {
         $data['project_id'] = $projectId;
 
         $fields = implode(',', array_keys($data));
-        $values = implode(',', array_map(function ($v) { // TODO: Анонимную функцию можно обозначить как static
+        $values = implode(',', array_map(function ($v) { // TODO: This anonymous function might be static for better scoping
             return is_string($v) ? '"' . $v . '"' : $v;
         }, $data));
 

@@ -8,6 +8,6 @@ $app = new Application();
 $app->run();
 
 
-// TODO: Глобально было бы неплохо:
-// - Выставить везде strict mode `declare(strict_types=1);`
-// - Указать у методов типы возвращаемых значений
+// TODO: In general it would be better to:
+// - Set strict mode in all files `declare(strict_types=1);`
+// - Declare return types for all methods (and method parameters also)

@@ -9,14 +9,15 @@ class Task implements \JsonSerializable
      */
     private $_data;
     
-    public function __construct($data) // TODO: Стоит указать тип параметра
+    public function __construct($data) // TODO: Declare parameter type for `$data`
     {
         $this->_data = $data;
     }
 
     /**
      * @return array
-     * @todo: Название метода не соответствует его функционалу. Это либо просто геттер, либо здесь не реализована сериализация
+     * @todo: The name of the method doesn't match with it's functionality.
+     * @todo: It either should be just a getter or there should be implemented a serialization.
      */
     public function jsonSerialize(): array
     {

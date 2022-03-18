@@ -7,9 +7,9 @@ class Project
     /**
      * @var array
      */
-    public $_data; // TODO: Здесь стоит выставить private
+    public $_data; // TODO: Make this property private as we need encapsulation
     
-    public function __construct($data) // TODO: Возможно стоит указать тип параметра
+    public function __construct($data) // TODO: Declare type of the parameter ($data)
     {
         $this->_data = $data;
     }

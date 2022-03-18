@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\Controller; // TODO: Некорректный namespace. Нужен App\Controller
+namespace Api\Controller; // TODO: Wrong namespace. Should be `App\Controller`
 
 use App\Model;
 use App\Storage\DataStorage;
@@ -62,8 +62,9 @@ class ProjectController
      */
     public function projectCreateTaskAction(Request $request)
     {
-        // TODO: Ниже в коде использована табуляция, хотя по остальному проекту - 4 пробела. Следует привести к общему виду
-		$project = $this->storage->getProjectById($request->get('id')); // TODO: Не учтено то, что вызываемый метод может выбросить исключение
+        // TODO: In the lines below there is a tabulation. Should be 4 spaces.
+        // TODO: Missed `try/catch` block. There could be an exception in `getProjectById()`
+		$project = $this->storage->getProjectById($request->get('id'));
 		if (!$project) {
 			return new JsonResponse(['error' => 'Not found']);
 		}
